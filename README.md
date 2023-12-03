@@ -36,10 +36,10 @@ URL: https://github.com/Nave-wata/laravel-template
 
 1. リポジトリをクローン
 
-2. main ブランチに移動
+2. react ブランチに移動
 
 ```shell
-$ git checkout main
+$ git checkout react
 ```
 
 3. アプリケーションを起動
