@@ -2,8 +2,8 @@ version: "3"
 
 services:
   nginx:
-    image: larave:nginx-1.0.0
-    container_name: larave_nginx
+    image: laravel:nginx-1.0.0
+    container_name: laravel_nginx
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
@@ -14,8 +14,8 @@ services:
     tty: true
 
   app:
-    image: larave:app-1.0.0
-    container_name: larave_app
+    image: laravel:app-1.0.0
+    container_name: laravel_app
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
@@ -28,8 +28,8 @@ services:
     tty: true
 
   db:
-    image: larave:db-1.0.0
-    container_name: larave-db
+    image: laravel:db-1.0.0
+    container_name: laravel-db
     build:
       context: .
       dockerfile: ./docker/db/Dockerfile
@@ -41,8 +41,8 @@ services:
     tty: true
 
   phpmyadmin:
-    image: larave:phpmyadmin-1.0.0
-    container_name: larave_phpmyadmin
+    image: laravel:phpmyadmin-1.0.0
+    container_name: laravel_phpmyadmin
     build:
       context: .
       dockerfile: ./docker/phpmyadmin/Dockerfile
