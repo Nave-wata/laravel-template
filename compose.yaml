@@ -1,0 +1,60 @@
+version: "3"
+
+services:
+  nginx:
+    image: larave:nginx-1.0.0
+    container_name: larave_nginx
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    tty: true
+
+  app:
+    image: larave:app-1.0.0
+    container_name: larave_app
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "5173:5173"
+    depends_on:
+      - db
+    tty: true
+
+  db:
+    image: larave:db-1.0.0
+    container_name: larave-db
+    build:
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    environment:
+      MARIADB_DATABASE: app
+      MARIADB_ROOT_PASSWORD: pass
+    ports:
+      - "3306:3306"
+    tty: true
+
+  phpmyadmin:
+    image: larave:phpmyadmin-1.0.0
+    container_name: larave_phpmyadmin
+    build:
+      context: .
+      dockerfile: ./docker/phpmyadmin/Dockerfile
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: pass
+      PMA_VERBOSE: phpmyadmin
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    tty: true
