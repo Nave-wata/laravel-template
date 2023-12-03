@@ -29,7 +29,7 @@ services:
 
   db:
     image: laravel:db-1.0.0
-    container_name: laravel-db
+    container_name: laravel_db
     build:
       context: .
       dockerfile: ./docker/db/Dockerfile
