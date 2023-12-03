@@ -8,6 +8,7 @@ export default function Welcome ({ title, subject }: PageProps<{ title: string, 
         <>
             <Head title={title} />
             <Typography variant="h1">{subject}</Typography>
+            <div>HELLO</div>
         </>
   )
 }
