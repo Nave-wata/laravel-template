@@ -60,3 +60,13 @@ services:
     depends_on:
       - db
     tty: true
+
+  redis:
+    image: laravel:1.0.0
+    container_name: laravel_redis
+    build:
+      context: .
+      dockerfile: ./docker/redis/Dockerfile
+    ports:
+      - "6379:6379"
+    tty: true
