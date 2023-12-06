@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    image: laravel:nginx-1.0.0
+    image: nave3/laravel:nginx-1.0.0
     container_name: laravel_nginx
     build:
       context: .
@@ -16,7 +16,7 @@ services:
     tty: true
 
   app:
-    image: laravel:app-1.0.0
+    image: nave3/laravel:app-1.0.0
     container_name: laravel_app
     build:
       context: .
@@ -30,7 +30,7 @@ services:
     tty: true
 
   db:
-    image: laravel:db-1.0.0
+    image: nave3/laravel:db-1.0.0
     container_name: laravel_db
     build:
       context: .
@@ -43,7 +43,7 @@ services:
     tty: true
 
   phpmyadmin:
-    image: laravel:phpmyadmin-1.0.0
+    image: nave3/laravel:phpmyadmin-1.0.0
     container_name: laravel_phpmyadmin
     build:
       context: .
