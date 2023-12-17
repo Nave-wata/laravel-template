@@ -23,14 +23,22 @@ jobs:
           --health-retries 5
 
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
       - uses: actions/checkout@v2
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer:v2
-      - name: Resolve dependencies
+      - name: Install composer dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: Install node dependencies
+        run: npm install
+      - name: Vite build
+        run: npm run build
       - name: Copy .env
         run: cp .env.example .env
       - name: Generate key
