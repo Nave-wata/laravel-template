@@ -35,12 +35,13 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "semi": ["error", "always"],
-        "semi-spacing": ["error", {"after": true, "before": false}],
-        "semi-style": ["error", "last"],
-        "no-extra-semi": "error",
-        "no-unexpected-multiline": "error",
-        "no-unreachable": "error"
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/no-extra-semi": "error"
     },
     "root": true,
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 }
