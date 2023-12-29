@@ -27,6 +27,13 @@ RUN \
         pdo_mysql \
         zip \
     ; \
+    pecl channel-update pecl.php.net; \
+    pecl install \
+        redis \
+    ; \
+    docker-php-ext-enable \
+        redis \
+    ; \
     \
     # 開発ユーザーの作成
     useradd -m -s /bin/bash dev ; \
