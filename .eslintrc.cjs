@@ -36,6 +36,13 @@ module.exports = {
     ],
     "rules": {
         "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/no-extra-semi": "error"
     },
     "root": true,
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 }

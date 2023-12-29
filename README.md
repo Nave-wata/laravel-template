@@ -10,6 +10,18 @@ Docker を使った Laravel 開発環境のテンプレートです。
 |    app     | php:8.2-fpm-bullseye |
 |     db     |    mariadb:10.11     |
 | phpmyadmin |   phpmyadmin:5.2.1   |
+|   redis    |       redis:7        |
+
+### [Laravel - Redis](https://laravel.com/docs/10.x/redis)
+
+**サポート**
+
+-   phpredis
+-   predis
+
+**設定**
+
+-   `.env` の `REDIS_CLIENT` で切り替え
 
 ## ツール
 
@@ -36,10 +48,10 @@ URL: https://github.com/Nave-wata/laravel-template
 
 1. リポジトリをクローン
 
-2. react ブランチに移動
+2. react-redis ブランチに移動
 
 ```shell
-$ git checkout react
+$ git checkout react-redis
 ```
 
 3. アプリケーションを起動
