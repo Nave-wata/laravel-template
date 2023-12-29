@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build && vite build --ssr",
+        "build": "vite build",
+        "build:ssr": "vite build --ssr",
         "lint": "eslint --ext ts,tsx .",
         "lint:fix": "eslint --ext ts,tsx --fix ."
     },
