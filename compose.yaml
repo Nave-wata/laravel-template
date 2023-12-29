@@ -62,7 +62,7 @@ services:
     tty: true
 
   redis:
-    image: nave3/laravel:1.0.0
+    image: nave3/laravel:redis-1.0.0
     container_name: laravel_redis
     build:
       context: .
