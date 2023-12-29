@@ -7,7 +7,7 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 const appName: string = import.meta.env.VITE_APP_NAME ?? "Laravel";
 
-await createInertiaApp({
+createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: async (name) => await resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob("./Pages/**/*.tsx")),
     setup({ el, App, props }) {
@@ -15,4 +15,4 @@ await createInertiaApp({
 
         root.render(<App {...props} />);
     },
-});
+}).then(() => {});
