@@ -1,0 +1,28 @@
+name: Vite build
+
+on:
+    pull_request:
+        paths:
+        - "**.js"
+        - "**.ts"
+        - "**.jsx"
+        - "**.tsx"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Run composer install
+        uses: php-actions/composer@v6
+        with:
+          php-version: '8.2'
+          composer-options: --no-progress --prefer-dist --optimize-autoloader
+      - name: Install node dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
